@@ -1,59 +1,4 @@
-# 마크다운
-
-- 텍스트 기반의 가벼운 마크업 언어
-- 문서의 구조와 내용을 같이 쉽고 빠르게 적고자 탄생
-
-# 개발자로 성장하기
-- 대체 어디서부터 시작해서 어디까지 해야 할까?
-- python과 Java를 배우면 개발자가 되는걸까?
-제일 중요한건 **꾸준한 학습**을 할 수 있는 사람인지를 보여줘야 한다!
-
-[Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fdbf0a52-ac1a-495b-8410-a18e64f7cdc8/Untitled.png)
-
-- **마크다운 활용 가능 기호**
-    
-    #헤딩
-    
-    - 문서의 제목이나 소제목으로 사용함.
-    - #의 개수에 따라 제목의 수준을 구별(h1~h6)
-    - 문서 구조의 기본
-    - 글자 크기를 키우기 위해서 사용금지! (제목으로 구별함)
-    
-    # * /1.2.3 리스트
-    
-    - 순서가 있는 리스트와 순서가 없는 리스트로 나뉨
-    - 목록을 표시하기 위해 사용
-    - 많이 사용하는 태그 중 하나
-    
-    # ```text``` / `text` 코드블럭
-    
-    ```jsx
-    ```text```의 예시
-    ```
-    
-    ``text`의 예시`
-    
-    - 일반 텍스트와 달리 코드를 꾸며서 출력함
-    - 개발자가 마크다운을 사랑하는 이유 중 하나.
-    - 사용하는 프로그램에 따라 특정 언어를 명시하면 구문 강조 지원
-    
-    [title]([https://www.example.com](https://www.example.com/)) 링크
-    
-    - 다른 페이지로 이동
-    
-    # ![string](img_url) 이미지
-    
-    - 이미지 삽입에 사용
-    - 너비와 높이는 조절 할 수 없음
-    
-    # **BOLD**, *Italic*, ~line~ 라인 등
-    
-
-**링크 참고**
-
-[Markdown Cheat Sheet | Markdown Guide](https://www.markdownguide.org/cheat-sheet)
-
-README.md
+### README.md
 - 프로젝트에 대한 설명 문서
 
 - Github 프젝에서 가장 먼저 보는 문서로 일반적으로 SW와 같이 배포함.
@@ -72,7 +17,7 @@ README.md
 
 ![working directory : 작업 영역
 staging area : 1차로 자료 올림
-repository : commit 완료](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7d2793c8-228c-4eb5-9ff4-6fe71060f2c6/2023-01-12-13-25-48-521.jpg)
+repository : commit 완료]![이미지](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7d2793c8-228c-4eb5-9ff4-6fe71060f2c6/2023-01-12-13-25-48-521.jpg)
 
 working directory : 작업 영역
 staging area : 1차로 자료 올림
@@ -85,3 +30,230 @@ git add : working directory → staging
 git commit : staging→ repository
 
 git status : 현재 상태 확인
+
+`python
+
+```jsx
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/Python_pr
+$ cd ..
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop
+$ mkdir git_test  **# 경로 생성**
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop
+$ ls
+ 1학기/  '2반 신지원.md'   desktop.ini  'Eclipse IDE for Java Developers - 2022-09.lnk'*   git_test/   python_pr/   SPIKE-PRIME_Win10_2.0.9_Global.msi   Webex.lnk*                git_test/   python_pr/   SPIKE-PRIME_Win10_2.0.9_Global.msi   Webex.lnk*
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop
+$ cd git_test **경로 변경**
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test
+$ git init **# git initialize**
+Initialized empty Git repository in C:/Users/SSAFY/Desktop/git_test/.git/
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ ls -a **# 디렉토리 내 전체 파일 보기**
+./  ../  .git/
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ touch README.md **#README 파일 생성**
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git status  
+# 상태 보기 : 현재의 경우 commit 할 파일은 안올라왔으나 추가 가능한 파일이 있음을 알려줌
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git add README.md **#staging area로 파일 올림**
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git status **#상태 보니, 커밋 가능한 파일 알려줌**
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git commit -m "Add README.md"
+Author identity unknown  **#git 저장한 사람의 이름과 이메일 작성**
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'SSAFY@DESKTOP-DOGVPUB.(none)')
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git config --global user.email "acd0825@naver.com"
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git config --global user.name "Jay"
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git commit -m "Add README.md"  **#git 커밋하고 설명글 작성**
+[main (root-commit) 3ae580b] Add README.md
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+```
+
+git에 올리기
+
+```jsx
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git remote add origin https://github.com/JayJayleee/git_test.git
+**-> 원격으로 나의 주소에 git을 업데이트** 
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git remote -v
+origin  https://github.com/JayJayleee/git_test.git (fetch)
+origin  https://github.com/JayJayleee/git_test.git (push)
+**-> 현재 git 에 저장된 저장소를 나타냄**
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 213 bytes | 213.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/JayJayleee/git_test.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+**-> git을 업로드 함**
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git add README.md
+**-> 스테이지에 git 추가**
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+**$ git restore --staged  README.md  #스테이징 된 것을 다시 워킹 디렉토리로 내림**
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git diff README.md
+diff --git a/README.md b/README.md
+index e69de29..a098547 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,2 @@
++### 배드민턴 동아리 만들어서 운동해야지....
++## 집에 가고 싶다......
+\ No newline at end of file
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+**$ git add README.md**
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git push origin main
+Everything up-to-date
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+**$ git commit -m "Edit README.md"  # 로컬 저장소에 기록 남김**
+[main 2bedd6d] Edit README.md
+ 1 file changed, 2 insertions(+)
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+**$ git push origin main   # 허브에 업로드**
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 328 bytes | 109.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/JayJayleee/git_test.git
+   3ae580b..2bedd6d  main -> main
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop/git_test (main)
+**$ git log**
+commit 2bedd6d6a9763588a4b4e60e7413b5ffa630918d (HEAD -> main, origin/main)
+Author: Jay <acd0825@naver.com>
+Date:   Thu Jan 12 14:29:37 2023 +0900
+
+    Edit README.md
+
+commit 3ae580b1697dd1340a26dc118af385f4f9b62392
+Author: Jay <acd0825@naver.com>
+Date:   Thu Jan 12 13:41:14 2023 +0900
+
+    Add README.md
+```
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/399c58b5-61b3-465e-8223-a2cd03646ecb/Untitled.png)
+
+**업로드 과정**
+
+```java
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop
+**$ rm -rf git_test  #파일 제거함**
+
+SSAFY@DESKTOP-DOGVPUB MINGW64 ~/Desktop
+**$ git clone https://github.com/JayJayleee/git_test.git
+-> GIT 다시 복제** 
+Cloning into 'git_test'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 9 (delta 0), reused 9 (delta 0), pack-reused 0
+Receiving objects: 100% (9/9), done.
+
+```
+`
+- 이력이 필요 없을 경우에는 클론 대신 다운로드하여 최신 파일만 가져옴!
